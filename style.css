@@ -1,0 +1,54 @@
+#intro {
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#game-container {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+
+}
+#game-container div {
+    border: 1px solid black;
+    width: 32%;
+    height: 30%;
+    border-radius: 5px;
+    font-size: 6rem;
+    text-align: center;
+}
+#game-container div:focus {
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 31%;
+}
+#game-container div:hover {
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 31%;
+    cursor: pointer;
+}
+.user-character {
+    display: inline-block;
+    padding: 0.5rem;
+}
+.user-character, span {
+    color: green;
+    font-size: 4rem;
+}
+.fa-xmark{
+    color: green;
+}
+.fa-o {
+    color: red;
+}
+.user-character:focus {
+    border: 3px solid black;
+    border-radius: 5px;
+}
+.user-character:hover {
+    border: 3px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
