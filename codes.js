@@ -166,7 +166,7 @@ function winnerCheck() {
         sidePieceAI()
     }
     else if (characterHolder[6].innerHTML == computerCharacter &&
-        characterHolder[7].innerHTML &&
+        characterHolder[7].innerHTML == computerCharacter &&
         characterHolder[8].innerHTML == computerCharacter) {
         sidePieceAI()
     }
