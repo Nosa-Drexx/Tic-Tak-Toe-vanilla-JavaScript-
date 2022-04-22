@@ -215,7 +215,7 @@ function userScorefunction() {
       if(userScoreUpdate == null ) { // default value when user loads website for the first time or when user clears localStorage
          userScoreUpdate = 0;
      }
-    document.getElementById("userScore").innerHTML = `User &nbsp; &nbsp; &nbsp;&nbsp; ${userScoreUpdate}`;
+    document.getElementById("userScore").innerHTML = `User &nbsp; &nbsp; &nbsp; ${userScoreUpdate}`;
 };
 userScorefunction();
 
