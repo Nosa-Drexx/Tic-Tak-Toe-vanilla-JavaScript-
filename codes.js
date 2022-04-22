@@ -282,7 +282,7 @@ function clearUserData() {
     if(confirm(` ⚠Are you sure you want to rest your Data, ❗Data can't be gotten back`)) {
     localStorage.clear();
     document.getElementById("AIScore").innerHTML = `AI &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${0}`;
-    document.getElementById("userScore").innerHTML = `User &nbsp; &nbsp; &nbsp;&nbsp; ${0}`;
+    document.getElementById("userScore").innerHTML = `User &nbsp; &nbsp; ${0}`;
     }
 }
 // counter movement for AI to monitor users actions
