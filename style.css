@@ -30,6 +30,27 @@
     width: 31%;
     cursor: pointer;
 }
+.score, #userScore {
+    width: 180px;
+    height: 50px; 
+    font-size: 2.5rem;
+    padding: 0px; 
+    margin-right: 5px;
+    border-bottom: 4px solid green;
+    border-radius: 5px 0 0 10px;
+    display: inline-block;
+    
+}
+#AIScore {
+    margin-left: 10px;
+    border-right: 2px solid green;
+    border-radius: 0 5px 10px 0;
+    color: red;
+}
+#userScore {
+    color: blue;
+    margin-right: 10px;
+}
 .user-character {
     background-color: white;
     border: none;
@@ -54,4 +75,17 @@
     border: 3px solid black;
     border-radius: 5px;
     cursor: pointer;
+}
+.reset-data-Btn {
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: aqua;
+    color: green;
+}
+.reset-data-Btn:hover,.reset-data-Btn:focus  {
+    font-size: 1.7rem;
+    border-radius: 10px;
+    background-color: aqua;
+    color: red;
+    border: 3px solid black;
 }
