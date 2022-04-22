@@ -1,5 +1,7 @@
 var userCharacter;
-var computerCharacter;
+var computerCharacter ;
+var userScoreUpdate;
+var computerScoreUpdate;
 
 const characterX = document.querySelector('.x');
 const characterO = document.querySelector('.o');
@@ -181,6 +183,8 @@ function winnerCheck() {
         sidePieceAI()
     }
 }
+//console.log(localStorage.getItem('userScore'));
+
 
 function sidePieceUser() {
     if (window.confirm(`You Won`)) {
@@ -190,9 +194,31 @@ function sidePieceUser() {
         alert(`about to restart End Game`)
         setTimeout(() => location.reload(), 1000);
     }
+
+    userScoreUpdate = Number(localStorage.getItem('userScore')) + 1; // gets updated with new score everytime the user wins
+
+    if(localStorage.getItem('userScore') === null) { // avoid reassignment every time the page refreshes.
+        localStorage.setItem('userScore',  1); // default value when user plays for the very first time or user resets their data
+    }
+    else{
+        localStorage.setItem('userScore',  userScoreUpdate);
+    }
+
+    userScorefunction();
     clearInterval(winner);
     clearInterval(filled);
 }
+
+userScoreUpdate = localStorage.getItem('userScore'); // always have the value of the previous session everytime it runs
+
+function userScorefunction() { 
+      if(userScoreUpdate == null ) { // default value when user loads website for the first time or when user clears localStorage
+         userScoreUpdate = 0;
+     }
+    document.getElementById("userScore").innerHTML = `User &nbsp; &nbsp; &nbsp;&nbsp; ${userScoreUpdate}`;
+};
+userScorefunction();
+
 
 function sidePieceAI() {
     if (window.confirm(`AI Won better luck next time`)) {
@@ -202,9 +228,34 @@ function sidePieceAI() {
         alert(`about to restart End Game`)
         setTimeout(() => location.reload(), 1000);
     }
+
+    computerScoreUpdate = Number(localStorage.getItem('AIScore')) + 1; // gets updated with new score everytime the user wins
+
+    if(localStorage.getItem('AIScore') === null) { // avoid reassignment every time the page refreshes.
+        localStorage.setItem('AIScore',  1); // default value when user plays for the very first time or user resets their data
+        console.log('hi');
+    }
+    else{
+        localStorage.setItem('AIScore', computerScoreUpdate);
+    }
+
+    computerScorefunction();
+    
     clearInterval(winner);
     clearInterval(filled);
 }
+
+computerScoreUpdate = localStorage.getItem('AIScore'); // always have the value of the previous session everytime it runs
+
+function computerScorefunction() {
+      if(computerScoreUpdate == '' || computerScoreUpdate == null) { // default value when user loads website for the first time or when user clears localStorage
+         computerScoreUpdate = 0;
+         
+     }
+     console.log(computerScoreUpdate);
+    document.getElementById("AIScore").innerHTML = `AI &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${computerScoreUpdate}`;
+}
+computerScorefunction();
 
 function allfilled() {
     if (characterHolder[0].innerHTML != '' &&
@@ -228,6 +279,14 @@ function boxfilled() {
     setTimeout(() => location.reload(), 1000);
 }
 
+function clearUserData() {
+  
+    if(confirm(` ⚠Are you sure you want to rest your Data, ❗Data can't be gotten back`)) {
+    localStorage.clear();
+    document.getElementById("AIScore").innerHTML = `AI &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${0}`;
+    document.getElementById("userScore").innerHTML = `User &nbsp; &nbsp; &nbsp;&nbsp; ${0}`;
+    }
+}
 // counter movement for AI to monitor users actions
 function watchUserMovement() {
     if ((characterHolder[0].innerHTML == userCharacter && characterHolder[1].innerHTML == userCharacter) ||
