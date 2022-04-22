@@ -191,6 +191,7 @@ function sidePieceUser() {
         setTimeout(() => location.reload(), 1000);
     }
     clearInterval(winner);
+    clearInterval(filled);
 }
 
 function sidePieceAI() {
@@ -202,6 +203,7 @@ function sidePieceAI() {
         setTimeout(() => location.reload(), 1000);
     }
     clearInterval(winner);
+    clearInterval(filled);
 }
 
 function allfilled() {
@@ -221,7 +223,7 @@ function allfilled() {
 }
 
 function boxfilled() {
-    alert(`All boxes are filled refreshing`);
+    alert(`Its a Tie, all boxes are filled, refreshing...`);
     clearInterval(filled);
     setTimeout(() => location.reload(), 1000);
 }
