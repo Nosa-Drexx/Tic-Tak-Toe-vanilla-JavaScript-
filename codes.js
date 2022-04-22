@@ -33,7 +33,7 @@ var respond = () => {
 }
 
 const gameContainer = document.getElementById('game-container');
-const characterHolder = gameContainer.querySelectorAll('div');
+const characterHolder = gameContainer.querySelectorAll('button');
 
 characterHolder.forEach(item => {
     item.addEventListener('click', paste = () => {
