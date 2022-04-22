@@ -219,7 +219,6 @@ function userScorefunction() {
 };
 userScorefunction();
 
-
 function sidePieceAI() {
     if (window.confirm(`AI Won better luck next time`)) {
         setTimeout(() => location.reload(), 1000);
@@ -233,7 +232,7 @@ function sidePieceAI() {
 
     if(localStorage.getItem('AIScore') === null) { // avoid reassignment every time the page refreshes.
         localStorage.setItem('AIScore',  1); // default value when user plays for the very first time or user resets their data
-        console.log('hi');
+       
     }
     else{
         localStorage.setItem('AIScore', computerScoreUpdate);
@@ -252,7 +251,6 @@ function computerScorefunction() {
          computerScoreUpdate = 0;
          
      }
-     console.log(computerScoreUpdate);
     document.getElementById("AIScore").innerHTML = `AI &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${computerScoreUpdate}`;
 }
 computerScorefunction();
