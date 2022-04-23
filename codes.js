@@ -215,7 +215,7 @@ function userScorefunction() {
       if(userScoreUpdate == null ) { // default value when user loads website for the first time or when user clears localStorage
          userScoreUpdate = 0;
      }
-    document.getElementById("userScore").innerHTML = `User &nbsp; &nbsp; ${userScoreUpdate}`;
+    document.getElementById("userScore").innerHTML = `User &nbsp;${userScoreUpdate}`;
 };
 userScorefunction();
 
@@ -251,7 +251,7 @@ function computerScorefunction() {
          computerScoreUpdate = 0;
          
      }
-    document.getElementById("AIScore").innerHTML = `AI &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${computerScoreUpdate}`;
+    document.getElementById("AIScore").innerHTML = `AI &nbsp; &nbsp; &nbsp; &nbsp;${computerScoreUpdate}`;
 }
 computerScorefunction();
 
@@ -281,8 +281,8 @@ function clearUserData() {
   
     if(confirm(` ⚠Are you sure you want to rest your Data, ❗Data can't be gotten back`)) {
     localStorage.clear();
-    document.getElementById("AIScore").innerHTML = `AI &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${0}`;
-    document.getElementById("userScore").innerHTML = `User &nbsp; &nbsp; ${0}`;
+    document.getElementById("AIScore").innerHTML = `AI &nbsp; &nbsp; &nbsp; &nbsp;${0}`;
+    document.getElementById("userScore").innerHTML = `User &nbsp;${0}`;
     }
 }
 // counter movement for AI to monitor users actions
