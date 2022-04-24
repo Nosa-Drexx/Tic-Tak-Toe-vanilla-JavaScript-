@@ -2,7 +2,7 @@ var userCharacter;
 var computerCharacter ;
 var userScoreUpdate;
 var computerScoreUpdate;
-
+// variable loadingContainer gotten from additional functionalities js file in current folder.
 const characterX = document.querySelector('.x');
 const characterO = document.querySelector('.o');
 
@@ -188,10 +188,12 @@ function winnerCheck() {
 
 function sidePieceUser() {
     if (window.confirm(`You Won`)) {
+        loadingContainer.style.display = 'flex'; // loadingConatiner variable gotten from additional functionalities file.
         setTimeout(() => location.reload(), 1000);
     }
     else {
-        alert(`about to restart End Game`)
+        alert(`about to restart End Game`);
+        loadingContainer.style.display = 'flex';
         setTimeout(() => location.reload(), 1000);
     }
 
@@ -221,10 +223,12 @@ userScorefunction();
 
 function sidePieceAI() {
     if (window.confirm(`AI Won better luck next time`)) {
+        loadingContainer.style.display = 'flex';
         setTimeout(() => location.reload(), 1000);
     }
     else {
-        alert(`about to restart End Game`)
+        alert(`about to restart End Game`);
+        loadingContainer.style.display = 'flex';
         setTimeout(() => location.reload(), 1000);
     }
 
@@ -274,6 +278,7 @@ function allfilled() {
 function boxfilled() {
     alert(`Its a Tie, all boxes are filled, refreshing...`);
     clearInterval(filled);
+    loadingContainer.style.display = 'flex'; // loadingConatiner variable gotten from additional functionalities file.
     setTimeout(() => location.reload(), 1000);
 }
 
