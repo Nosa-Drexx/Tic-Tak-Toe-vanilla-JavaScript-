@@ -1,3 +1,11 @@
+body {
+    margin: 0px; 
+    padding: 0px;
+    box-sizing: border-box;
+}
+div {
+    margin-left: 10px;
+}
 #intro {
     font-size: 2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -48,6 +56,7 @@
     color: red;
 }
 #userScore {
+    border-left: 2px solid green;
     color: blue;
     margin-right: 10px;
 }
@@ -56,6 +65,7 @@
     border: none;
     display: inline-block;
     padding: 0.5rem;
+    margin-left: 10px;
 }
 .user-character, span {
     color: green;
@@ -88,4 +98,39 @@
     background-color: aqua;
     color: red;
     border: 3px solid black;
+}
+.loading-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    z-index: 2;
+    background-color: black;
+    /*display: none;*/
+}
+.loading {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top-color: red;
+    border-left-color: green;
+    border-right-color: blue;
+    border-bottom-color: blueviolet;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
 }
