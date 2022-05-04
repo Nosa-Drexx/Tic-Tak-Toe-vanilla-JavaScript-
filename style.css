@@ -12,7 +12,7 @@ div {
 }
 #game-container {
     display: flex;
-    width: 99%;
+    width: 98%;
     height: 400px;
     flex-wrap: wrap;
     gap: 0.2rem;
